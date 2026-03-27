@@ -1,0 +1,23 @@
+name: 💬 Feedback
+description: Submit a suggestion or general observation
+title: "[FEEDBACK] "
+labels: ["feedback"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+      description: |
+        🇬🇧 A short, descriptive title for your feedback.
+      placeholder: "E.g.: Improve error messages for field merchant_vat"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: |
+        🇬🇧 Describe your feedback in detail.
+    validations:
+      required: true

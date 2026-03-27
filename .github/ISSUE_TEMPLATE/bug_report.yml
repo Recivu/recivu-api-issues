@@ -1,0 +1,62 @@
+name: 🐛 Bug Report
+description: Report unexpected API behavior
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🇬🇧 Please fill in all required fields to help us reproduce the issue.
+
+  - type: input
+    id: endpoint
+    attributes:
+      label: "Endpoint"
+      description: |
+        🇬🇧 The endpoint called at the time of the issue.
+      placeholder: "POST /receipt"
+    validations:
+      required: true
+
+  - type: input
+    id: timestamp
+    attributes:
+      label: "Timestamp"
+      description: |
+        🇬🇧 Date and time of the request (including timezone).
+      placeholder: "2024-08-22T14:30:00Z"
+    validations:
+      required: true
+
+  - type: input
+    id: status_code
+    attributes:
+      label: "HTTP Status Code"
+      description: |
+        🇬🇧 The HTTP status code received in the response.
+      placeholder: "500"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: |
+        🇬🇧 Describe the actual behavior and the expected behavior.
+      placeholder: |
+        🇬🇧
+        Actual behavior: ...
+        Expected behavior: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: payload
+    attributes:
+      label: "Payload (anonymized)"
+      description: |
+        🇬🇧 Include the request payload, removing any sensitive data (e.g. base64 images, personal data).
+      render: json
+    validations:
+      required: false
