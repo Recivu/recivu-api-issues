@@ -8,7 +8,7 @@ body:
     attributes:
       label: "Title"
       description: |
-        🇬🇧 A short, descriptive title for your feedback.
+        A short, descriptive title for your feedback.
       placeholder: "E.g.: Improve error messages for field merchant_vat"
     validations:
       required: true
@@ -18,6 +18,6 @@ body:
     attributes:
       label: "Description"
       description: |
-        🇬🇧 Describe your feedback in detail.
+        Describe your feedback in detail.
     validations:
       required: true
