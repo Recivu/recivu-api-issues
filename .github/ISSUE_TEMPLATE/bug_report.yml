@@ -8,13 +8,23 @@ body:
       value: |
         ## Please fill in all required fields to help us reproduce the issue.
 
-  - type: input
+  - type: dropdown
     id: endpoint
     attributes:
       label: "Endpoint"
       description: |
         The endpoint called at the time of the issue (if applicable).
-      placeholder: "POST /receipt"
+    options:
+      - "POST /receipt"
+      - "GET /receipts/{id}"
+      - "GET /invoices_download/{id}"
+      - "POST /receipts/{id}/approve"
+      - "POST /receipts/{id}/reject"
+      - "POST /company"
+      - "GET /company/{id}"
+      - "DELETE /company/{id}"
+      - "POST /employee"
+      - "DELETE /employee/{id}"
     validations:
       required: false
 
