@@ -13,30 +13,10 @@ body:
     attributes:
       label: "Endpoint"
       description: |
-        The endpoint called at the time of the issue.
+        The endpoint called at the time of the issue (if applicable).
       placeholder: "POST /receipt"
     validations:
-      required: true
-
-  - type: input
-    id: timestamp
-    attributes:
-      label: "Timestamp"
-      description: |
-        Date and time of the request (including timezone).
-      placeholder: "2024-08-22T14:30:00Z"
-    validations:
-      required: true
-
-  - type: input
-    id: status_code
-    attributes:
-      label: "HTTP Status Code"
-      description: |
-        The HTTP status code received in the response.
-      placeholder: "500"
-    validations:
-      required: true
+      required: false
 
   - type: textarea
     id: description
