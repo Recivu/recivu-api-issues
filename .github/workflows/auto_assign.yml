@@ -20,3 +20,27 @@ jobs:
               issue_number: context.issue.number,
               assignees: ['nabilzouhir']
             });
+
+      - name: Create Linear issue
+        env:
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+        run: |
+          curl -s -X POST https://api.linear.app/graphql \
+            -H "Content-Type: application/json" \
+            -H "Authorization: $LINEAR_API_KEY" \
+            -d "$(jq -n \
+              --arg title "${{ github.event.issue.title }}" \
+              --arg desc "GitHub Issue: ${{ github.event.issue.html_url }}\n\n${{ github.event.issue.body }}" \
+              '{
+                query: "mutation($input: IssueCreateInput!) { issueCreate(input: $input) { success issue { id identifier url } } }",
+                variables: {
+                  input: {
+                    title: $title,
+                    description: $desc,
+                    teamId: "40629deb-baa5-42a7-af0b-aeea8fb2d740",
+                    assigneeId: "909efdf7-c3c0-485b-810b-e8fb56fc68db",
+                    labelIds: ["a4a24869-62f6-4e89-a6ab-4b8c24935766"]
+                  }
+                }
+              }'
+            )"
