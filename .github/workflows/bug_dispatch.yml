@@ -20,7 +20,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: 'Got it! We'll work on a fix and update this thread asap'
+              body: `Got it! We'll work on a fix and update this thread asap`
             });
 
       - name: Trigger automation
